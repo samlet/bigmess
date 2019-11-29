@@ -1,0 +1,79 @@
+[package]
+name = "sagas_greeter"
+version = "0.1.0"
+authors = ["Samlet Wu <xiaofei.wu@gmail.com>"]
+edition = "2018"
+publish = false
+
+[lib]
+doctest = false
+test = false
+
+[dependencies.grpc]
+path = "../../grpc"
+[dependencies.grpc-protobuf]
+path = "../../grpc-protobuf"
+
+#[dependencies.rocksdb]
+#git = "https://github.com/pingcap/rust-rocksdb.git"
+
+[dependencies]
+protobuf        = "2"
+futures         = "0.1.*"
+futures-cpupool = "0.1.*"
+tls-api            = "0.1.*"
+tls-api-native-tls = "0.1.*"
+#httpbis         = "~0.7"
+httpbis         = { git = "https://github.com/stepancheg/rust-http2" }
+env_logger      = "~0.5"
+
+uuid = { version = "0.7", features = [ "v4" ] }
+log = "0.4"
+amiquip = "0.2"
+difflib = "0.4.0"
+serde_json = "1.0"
+serde        = { version = "1.0", optional = true }
+serde_derive = { version = "1.0", optional = true }
+
+whatlang = "0.7.0"
+tempdir = "0.3"
+rocksdb = "0.12.1"
+
+tantivy = "0.9.1"
+tantivy-tokenizer-tiny-segmenter = "0.2.0"
+#tantivy-jieba = "0.1.1"
+rayon = "1.0"
+downcast-rs = "1.0.4"
+#downcast = "0.10.0"
+jieba-rs = "0.2"
+lazy_static = "1.2"
+
+tokio="0.1"
+tokio-timer = "0.1"
+
+[build-dependencies]
+protoc-rust-grpc = { path = "../../protoc-rust-grpc" }
+
+[[bin]]
+name = "greeter_client"
+test = false
+
+[[bin]]
+name = "greeter_client_multi"
+test = false
+
+[[bin]]
+name = "greeter_servant"
+test = false
+
+[[bin]]
+name = "greeter_server_multi_server"
+test = false
+
+[[bin]]
+name = "procs_proto"
+test = false
+
+[[bin]]
+name = "procs_addrbook"
+test = false
